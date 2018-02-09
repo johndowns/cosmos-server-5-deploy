@@ -1,0 +1,39 @@
+queue:
+  name: Hosted VS2017
+  demands: npm
+
+steps:
+- task: Npm@1
+  displayName: Install Packages
+  inputs:
+    verbose: 'false'
+
+- task: Npm@1
+  displayName: Build and Run Tests
+  inputs:
+    command: 'custom'
+    verbose: 'false'
+    customCommand: 'run test'
+
+- task: PublishTestResults@2
+  displayName: Publish Test Results
+  inputs:
+    testRunner: 'VSTest'
+    testResultsFiles: 'testresults/testresults*.xml'
+    searchFolder: '$(Build.SourcesDirectory)'
+  condition: always()
+
+- task: Npm@1
+  displayName: Run Release Build
+  inputs:
+    command: 'custom'
+    verbose: 'false'
+    customCommand: 'run build'
+
+- task: PublishBuildArtifacts@1
+  displayName: Publish Artifact
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/output/build'
+    ArtifactName: 'drop'
+    ArtifactType: 'Container'
+

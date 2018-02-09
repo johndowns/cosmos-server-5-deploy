@@ -1,0 +1,11 @@
+{
+  "include": [
+    "src/**/*.ts",
+    "spec/**/*.ts"
+  ],
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "outDir": "output/test"
+  }
+}

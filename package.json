@@ -1,0 +1,16 @@
+{
+  "scripts": {
+    "build": "foreach -g \"src/**/*.ts\" --no-c -x \"jspp --set PRODUCTION #{path} > #{dir}/#{name}.ready.ts\" && tsc -p tsconfig.build.json",
+    "test": "tsc && jasmine JASMINE_CONFIG_PATH=jasmine.json"
+  },
+  "devDependencies": {
+    "@types/documentdb-server": "~0.0.31",
+    "@types/jasmine": "~2.8.3",
+    "foreach-cli": "^1.7.2",
+    "jasmine": "~2.8.0",
+    "jasmine-tfs-reporter": "^1.0.2",
+    "jspreproc": "^0.2.7",
+    "moq.ts": "^2.5.2",
+    "typescript": "~2.6.2"
+  }
+}

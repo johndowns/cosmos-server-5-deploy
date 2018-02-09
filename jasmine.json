@@ -1,0 +1,10 @@
+{
+  "spec_dir": "output/test",
+  "spec_files": [
+    "**/*[sP]pec.js"
+  ],
+  "helpers": [
+    "spec/vstsReporter.js"
+  ],
+  "stopSpecOnExpectationFailure": true
+}

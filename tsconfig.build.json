@@ -1,0 +1,10 @@
+{
+  "include": [
+    "src/*.ready.ts"
+  ],
+  "compilerOptions": {
+    "module": "none",
+    "target": "es2015",
+    "outFile": "output/build/sp-getGroupedOrders.js"
+  }
+}
