@@ -37,3 +37,10 @@ steps:
     ArtifactName: 'drop'
     ArtifactType: 'Container'
 
+- task: PublishBuildArtifacts@1
+  displayName: Publish Deploy Script Artifact
+  inputs:
+    PathtoPublish: '$(Build.SourcesDirectory)/deploy'
+    ArtifactName: 'deploy'
+    ArtifactType: 'Container'
+  
