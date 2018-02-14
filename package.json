@@ -4,7 +4,7 @@
     "test": "tsc && jasmine JASMINE_CONFIG_PATH=jasmine.json"
   },
   "devDependencies": {
-    "@types/documentdb-server": "~0.0.31",
+    "@types/documentdb-server": "~0.0.32",
     "@types/jasmine": "~2.8.3",
     "foreach-cli": "^1.7.2",
     "jasmine": "~2.8.0",
